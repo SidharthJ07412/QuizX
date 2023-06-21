@@ -20,16 +20,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 5%;
-    margin-bottom: 2%;
+
+    /* margin-top: 5%;
+    margin-bottom: 2%; */
+    background-image:repeating-linear-gradient(60deg,#bbacedc1,#faaca8de);
+    min-height: 100vh;
 }
 
 .container .loginbox{
-    width: 400px;
+    width: 500px;
     min-height: 400px;
-    background: #FFF;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgb(0, 0, 1);
+    /* background: #FFF; */
+    /* border-radius: 5px; 
+    box-shadow: 0 0 5px rgb(0, 0, 1); */
     padding: 40px 30px;
     
 
@@ -89,25 +92,32 @@
 
 
 .container .loginsocial a.facebook:hover {
-    background: #3b5da1;
+
+    background: #8498c0;
 
 }
 
 
 .container .loginsocial a.twitter:hover {
-    background: #1c91da;
+
+    background: #63a3cb;
+
 
 }
 
 
 .container .loginsocial a.google:hover {
-    background: #c54133;
+
+    background: #59b1d1;
+
 
 }
 
 
 .container .loginsocial a.linkedin:hover {
-    background: #0a55a0;
+
+    background: #4f7aa6;
+
 
 }
 

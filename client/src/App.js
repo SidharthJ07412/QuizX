@@ -8,7 +8,11 @@ import Leaderboard from "./components/Leaderboard";
 function App() {
   return (
     <div className="App">
+
       <Leaderboard />
+
+      <Login />
+      <SignUp/>
     </div>
   );
 }
