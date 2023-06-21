@@ -1,0 +1,32 @@
+.toppers_image1 {
+  margin-top: 2rem;
+  height: 22rem;
+  width: 22rem;
+  border-radius: 1000px;
+  border: 10px solid rgb(247, 234, 158);
+}
+
+.toppers_image2 {
+  height: 19rem;
+  width: 19rem;
+  border-radius: 1000px;
+  border: 10px solid rgb(228, 224, 224);
+}
+
+.toppers_image3 {
+  height: 19rem;
+  width: 19rem;
+  border-radius: 1000px;
+  border: 10px solid rgb(201, 156, 111);
+}
+
+.rank_font {
+  color: white;
+  font-size: 4rem;
+  margin-top: 0px;
+}
+
+.name_font {
+  color: rgb(76, 68, 94);
+  font-size: 2rem;
+}

@@ -1,0 +1,19 @@
+.select_button{
+    display: block;
+    width: 100%;
+    padding: 15px 20px;
+    text-align: center;
+    border: none;
+    background: #D19C97;
+    outline: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    color: #ffffff;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.select_button:hover{
+    transform:translateY(-5px);
+    background: #cd817a;
+}

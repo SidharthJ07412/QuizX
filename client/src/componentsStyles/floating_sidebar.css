@@ -1,0 +1,22 @@
+#floating-panel2 {
+	width: 50px;
+	top: 200px;
+	float: right;
+	position: fixed;
+	right: 0;
+	z-index: 5000;
+	background-color: #cd817a;
+	padding: 5px;
+	border: 1px solid #cd817a;
+	border-radius: 1px;
+	float: right;
+	border-radius: 20px 0 0 20px;
+}
+.floating-icon {
+	margin-bottom: 4rem;
+}
+
+.openModalBtn {
+	background-color: transparent;
+	border: none;
+}
