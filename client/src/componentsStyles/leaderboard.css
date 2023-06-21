@@ -1,0 +1,16 @@
+body {
+  margin: 2rem;
+  background-color: rgb(188, 168, 227);
+}
+
+.leaderboard_css {
+  background-color: rgb(188, 168, 227);
+  align-items: center;
+  margin-top: 5rem;
+}
+
+.toppers_background {
+  background-color: rgb(214, 197, 245);
+  padding-top: 2rem;
+  border-radius: 2rem;
+}
