@@ -1,0 +1,18 @@
+.dashcard_css {
+  background-color: rgb(165, 143, 209);
+  /* border-radius: 35px; */
+  width: 95%;
+  margin: auto;
+  font-size: x-large;
+  text-align: center;
+}
+
+.dashinner_card_css {
+  /* border-radius: 35px; */
+  background-color: rgb(236, 234, 240);
+}
+
+.dashrow_rank {
+  font-weight: bold;
+  color: rgb(76, 22, 126);
+}
