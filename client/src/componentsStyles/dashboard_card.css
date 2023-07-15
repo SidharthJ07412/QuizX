@@ -1,0 +1,30 @@
+.dashboard_outer_card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 40%;
+  margin-left: 55%;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  text-align: center;
+  font-style: italic;
+  margin-top: 5rem;
+  margin-bottom: 7rem;
+}
+
+.outer_card_left {
+  border-radius: 1.5rem 0 0 1.5rem;
+  width: 25%;
+  align-items: center;
+  background-color: rgb(166, 135, 230);
+}
+
+.outer_card_right {
+  border-radius: 0 1.5rem 1.5rem 0;
+  background-color: rgb(211, 203, 228);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 75%;
+  align-items: center;
+}

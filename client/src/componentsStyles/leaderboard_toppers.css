@@ -24,9 +24,11 @@
   color: white;
   font-size: 4rem;
   margin-top: 0px;
+  text-align: center;
 }
 
 .name_font {
+  text-align: center;
   color: rgb(76, 68, 94);
   font-size: 2rem;
 }

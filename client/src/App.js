@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import SignUp from "./components/SignUp";
 import Login from "./components/Login";
@@ -24,7 +23,7 @@ function App() {
           <Route exact path='/Leaderboard' element={< Leaderboard />}></Route>
           <Route exact path='/AddQuestions' element={< AddQuestions />}></Route>
           <Route exact path='/QuizWindow' element={< QuizWindow />}></Route>
-          
+          <Route exact path='/Dashboard' element={< Dashboard />}></Route>
    </Routes>
    </div>
 </Router>
