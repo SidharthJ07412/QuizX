@@ -1,5 +1,6 @@
-body {
-  margin: 2rem;
+.leaderboardbody {
+  margin: 0;
+  padding: 20px;
   background-color: rgb(188, 168, 227);
 }
 
