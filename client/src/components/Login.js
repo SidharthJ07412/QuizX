@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import styles from "../componentsStyles/SignUp.module.css";
 import Button from "@mui/material/Button";
-//import axios from "axios";
-//import { useNavigate } from "react-router-dom";
-//import Cookies from "universal-cookie";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import Cookies from "universal-cookie";
 const Login= () =>{ 
 	const [user, setuser] = useState({
-		mem_id: 0,
+		User_id: 0,
 		email: "",
 		password: "",
 	});
@@ -15,17 +15,17 @@ const Login= () =>{
 			e.preventDefault();
 			console.log(user);
 			alert("You are now Logged in.");
-			// await axios
-			// 	.post("https://trackmycash.onrender.com/auth/login", user)
-			// 	.then((res) => {
-			// 		alert("You are now Logged in.");
-			// 		//user.mem_id = res.data;
-			// 		//cookies.set("Member", user, { path: "/" });
-			// 		//navigate("/Select");
-			// 	})
-			// 	.catch((err) => {
-			// 		alert("Incorrect Email or Password ");
-			// 	});
+			await axios
+				.post("http://localhost:5000/auth/login", user)
+				.then((res) => {
+					alert("You are now Logged in.");
+					user.User_id = res.data;
+					cookies.set("User", user, { path: "/" });
+					//navigate("/Select");
+				})
+				.catch((err) => {
+					alert("Incorrect Email or Password ");
+				});
 		} else {
 			alert("Invalid input for email or password");
 		}

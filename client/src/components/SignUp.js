@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import styles from "../componentsStyles/SignUp.module.css";
 import Button from "@mui/material/Button";
-//import axios from "axios";
-//import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 const SignUp = ()=>{
-  	//const navigate = useNavigate();
+  	const navigate = useNavigate();
 	const [user, setuser] = useState({
 		Fname: "",
 		email: "",
@@ -39,15 +39,15 @@ const SignUp = ()=>{
 			user.Cpassword !== ""
 		) {
 			e.preventDefault();
-			// axios
-			// 	.post("", user)
-			// 	.then((res) => {
-			// 		alert(res.data);
-			// 		navigate("/");
-			// 	})
-			// 	.catch((err) => {
+			axios
+				.post("http://localhost:5000/auth/signUp", user)
+				.then((res) => {
+					alert(res.data);
+					navigate("/");
+				})
+				.catch((err) => {
 					alert("Email Already in use");
-				// });
+				});
 		} else {
 			alert("Invalid Inputs");
 		}
@@ -64,6 +64,16 @@ const SignUp = ()=>{
 								placeholder="First Name"
 								name="Fname"
 								value={user.Fname}
+								onChange={handleChange}
+								required
+							/>
+						</div>
+						<div className={styles.inputgroup}>
+							<input
+								type="text"
+								placeholder="Last Name"
+								name="Lname"
+								value={user.Lname}
 								onChange={handleChange}
 								required
 							/>
