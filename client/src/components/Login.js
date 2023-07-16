@@ -4,6 +4,8 @@ import Button from "@mui/material/Button";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Cookies from "universal-cookie";
+
+const cookies = new Cookies();
 const Login= () =>{ 
 	const [user, setuser] = useState({
 		User_id: 0,
