@@ -33,7 +33,7 @@ function Leaderboard() {
   ]);
 
   return (
-    <div>
+    <div className="leaderboardbody">
       <div className="d-flex justify-content-around toppers_background">
         {scores.length > 1 && (
           <Leaderboard_toppers rank={2} name={scores[1].name} />
