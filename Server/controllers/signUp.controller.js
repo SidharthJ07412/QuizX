@@ -1,10 +1,11 @@
 import client from "../db.js"
+// import query from "../query.js"
 export const createUser = async (req, res) => {
 	const { Fname, Lname, email, password } = req.body;
 	let exists;
 	try {
 		exists = await client.query(
-			"Select * from User_data where User_data.email=$1;",
+			"Select * from User_data where User_data.email=$1"
 			[email]
 		);
 	} catch (err) {
@@ -43,6 +44,6 @@ export const logInUser = async (req, res) => {
 		console.log(userExists.rows);
 		res.status(200).send(userExists.rows[0].mem_id);
 	} else {
-		res.status(500).send("Wrong Email or Password");
+		res.status(500).send("user not exist");
 	}
 };

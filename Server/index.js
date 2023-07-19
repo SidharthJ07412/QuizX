@@ -4,6 +4,7 @@ import cors from "cors";
 
 
 import signUpRoutes from "./routes/signUp.js";
+import attemptQuizRoutes from "./routes/attemptQuiz.js";
 
 const app = express();
 
@@ -17,6 +18,7 @@ app.use(cors({
 }));
 
 app.use("/auth", signUpRoutes);
+app.use("/attempt", attemptQuizRoutes);
 
 const port = 5000;
 app.listen(port, () => {

@@ -4,6 +4,7 @@ import Button from "@mui/material/Button";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Cookies from "universal-cookie";
+const cookies = new Cookies();
 const Login= () =>{ 
 	const [user, setuser] = useState({
 		User_id: 0,
@@ -14,13 +15,14 @@ const Login= () =>{
 		if (user.email !== "" && user.password !== "") {
 			e.preventDefault();
 			console.log(user);
-			alert("You are now Logged in.");
+			//alert("You are now Logged in.");
 			await axios
 				.post("http://localhost:5000/auth/login", user)
 				.then((res) => {
-					alert("You are now Logged in.");
+					alert("You are now Logged 2 in.");
 					user.User_id = res.data;
 					cookies.set("User", user, { path: "/" });
+					
 					//navigate("/Select");
 				})
 				.catch((err) => {

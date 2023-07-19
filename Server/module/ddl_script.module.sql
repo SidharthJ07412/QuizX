@@ -58,5 +58,3 @@ INSERT INTO Marks(User_id, Quiz_id, correct_answers) VALUES (1,1,2);
 INSERT INTO Marks(User_id, Quiz_id, correct_answers) VALUES (2,1,1);
 INSERT INTO Marks(User_id, Quiz_id, correct_answers) VALUES (3,1,3);
 
-
-

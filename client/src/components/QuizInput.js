@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import "../componentsStyles/Quiz.css";
+import Cookies from "universal-cookie";
+
 
 const QuizInput = ({onSubmit  }) => {
   const [inputList, setInputList] = useState([
     {
       question: '',
       options: ['', '', '', ''],
-      correctOption:0,
+      correctOption:-1,
     },
   ]);
 
@@ -30,14 +32,14 @@ const QuizInput = ({onSubmit  }) => {
   }
 
   const handleCorrectOptionChange = (e, index) => {
-    const { value } = e.target;
-    if(value===1 || value ===2 || value===3 || value===4)
+    const  value  = Number(e.target.value);
+    if(value=='1' || value == '2' || value== '3' || value== '4')
     {
     const list = [...inputList];
     list[index].correctOption = value;
     setInputList(list); } 
     else{
-      e.target.value = 0;
+      e.target.value = -1;
       alert("it should between 0-4");
     }
     };
@@ -46,7 +48,7 @@ const QuizInput = ({onSubmit  }) => {
   const handleAddQuestion = () => { 
     setInputList([
       ...inputList,
-      { question: '', options: ['', '', '', ''], correctOption:0},
+      { question: '', options: ['', '', '', ''], correctOption:-1},
     ]);
   };
 

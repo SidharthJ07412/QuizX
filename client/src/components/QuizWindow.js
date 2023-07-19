@@ -6,63 +6,80 @@ function Quiz() {
   const [score, setscore] = useState(0);
   const [currentquestion, setcurrentquestion] = useState(0);
   const [chooseoption, setchooseoption] = useState(0);
-  // const[questions,setQuestions]=useState([]);
-  // function Quiz() {
-  //    // const [questions, setQuestions] = useState([]);
-  //     useEffect(() => {
-  //       fetch('https://opentdb.com/api.php?amount=10')
-  //         .then(response => response.json())
-  //         .then(data => setQuestions(data.results));
-  //     }, []);
+  const [savedAnswers, setSavedAnswers] = useState([]);
 
-  function Changequestion() {
+  function changeQuestionAndSaveAnswer() {
+    saveAnswer();
+    changeQuestion();
+  }
+
+  function changeQuestion() {
     if (currentquestion < QuizData.length - 1) {
       setcurrentquestion(currentquestion + 1);
+      setchooseoption(0); // Reset the chosen option when changing questions
     }
   }
 
-  function Changetoprev() {
+  function goToPreviousQuestion() {
     if (currentquestion > 0) {
       setcurrentquestion(currentquestion - 1);
+      setchooseoption(0); // Reset the chosen option when going to the previous question
     }
   }
+
+  function handleOptionClick(optionIndex) {
+    setchooseoption(optionIndex);
+  }
+
+  function saveAnswer() {
+    const savedAnswer = {
+      question: QuizData[currentquestion].question,
+      chosenOption: QuizData[currentquestion].options[chooseoption - 1]
+    };
+
+    const updatedAnswers = savedAnswers.filter(answer => answer.question !== savedAnswer.question);
+    setSavedAnswers([...updatedAnswers, savedAnswer]);
+  }
+
+  console.log("Saved Answers:", savedAnswers);
 
   return (
     <div className="QuizMainbody">
-      <p className="heading-txt"> Quiz </p>
+      <p className="heading-txt">Quiz</p>
       <div className="container">
         <div className="question">
           <span id="Question-number">{currentquestion + 1}.</span>
           <span id="Question-txt">{QuizData[currentquestion].question}</span>
         </div>
         <div className="option-container">
-          {QuizData[currentquestion].options.map((options, i) => {
+          {QuizData[currentquestion].options.map((option, i) => {
             return (
               <button
-                className="option-btn"
-                onClick={() => setchooseoption(i + 1)}
+                className={`option-btn ${chooseoption === i + 1 ? "selected" : ""}`}
+                onClick={() => handleOptionClick(i + 1)}
               >
-                {options}
+                {option}
               </button>
             );
           })}
         </div>
-        <div>
+        <div className="button-container">
           <input
             type="button"
-            value="prev"
-            id="next-button"
-            onClick={Changetoprev}
+            value="Previous Question"
+            id="prev-button"
+            onClick={goToPreviousQuestion}
           />
           <input
             type="button"
-            value="next"
-            id="prev-button"
-            onClick={Changequestion}
+            value="Save Answer & Change Option"
+            id="next-button"
+            onClick={changeQuestionAndSaveAnswer}
           />
         </div>
       </div>
     </div>
   );
 }
+
 export default Quiz;
